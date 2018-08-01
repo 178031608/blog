@@ -25,7 +25,7 @@ SECRET_KEY = '9qgh-%y9tr2*6cxvnzf8(u8a!&&&ea_-@-a18gooqunwozt)c$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -89,7 +89,18 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mysite_db',
+        'USER': 'ysh',
+        'PASSWORD': 'ysh123456',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -172,10 +183,9 @@ CACHES = {
 # https://docs.djangoproject.com/en/2.0/ref/settings/#email
 # https://docs.djangoproject.com/en/2.0/topics/email/
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.163.com'                       #SMTP地址 例如: smtp.163.com
-EMAIL_PORT = 25
-EMAIL_HOST_USER = '18622029401@163.com'
-EMAIL_HOST_PASSWORD = 'ma343659030'  # 授权码
-EMAIL_SUBJECT_PREFIX = u"['我的博客']"       #为邮件Subject-line前缀,默认是'[django]'
-EMAIL_USE_TLS = True                  #与SMTP服务器通信时，是否启动TLS链接(安全链接)。默认是false
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = '178031608@qq.com'
+EMAIL_HOST_PASSWORD = 'vkxtuznxswaycbeg'  # 授权码
+EMAIL_SUBJECT_PREFIX = '[我的的博客] '
+EMAIL_USE_TLS = True  # 与SMTP服务器通信时，是否启动TLS链接(安全链接)
